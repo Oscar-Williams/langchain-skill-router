@@ -21,6 +21,8 @@ Add the entry for a change in the same commit as the change itself.
 ### Fixed
 
 - Keep the selected decision when the `on_decision` callback raises; warn once per middleware and continue the turn.
+- An empty skill catalog now returns an empty decision or search results without calling the judge.
+  Empty decisions use the `empty` trace stage to distinguish them from failures.
 - Keep Jev's answer when the `on_usage` callback raises an exception. Warn once per judge with the
   exception type without exposing the callback's error text. Continue reporting usage on every call.
 - Route messages with image or file attachments using their text, so attachment data does not crowd
